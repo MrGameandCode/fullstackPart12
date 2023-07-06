@@ -1,0 +1,73 @@
+Script started on 2023-06-27 19:14:14+02:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="108" LINES="28"]
+[?2004h]0;mrgameandcode@PC:  /opt/fullstackopen/part12/part12-containers-applications/script-answers[01;32mmrgameandcode@PC[00m:[01;34m /opt/fullstackopen/part12/part12-containers-applications/script-answers[00m$ docker exec -it mongo[K[K[K[K[Ktodo-backend-mongo-1 todo-backend-mongo-1 [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kbash
+[?2004l[?2004hroot@1249e1da0c5f:/# mongosh -u root -p example
+[?2004l]0;mongosh mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	649b19871685c15c83e4280b
+Connecting to:		[1m[32mmongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.0[0m
+Using MongoDB:		6.0.6
+[1m[33mUsing Mongosh[0m:		1.10.0
+
+For mongosh info see: [1mhttps://docs.mongodb.com/mongodb-shell/[0m
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the [1mdisableTelemetry()[0m command.
+
+[1G[0J [1G[1m[33m------[0m
+   [1m[33mThe server generated these startup warnings when booting[0m
+   2023-06-27T17:07:09.612+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2023-06-27T17:07:10.376+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never'
+   2023-06-27T17:07:10.376+00:00: vm.max_map_count is too low
+[1m[33m------[0m
+
+[1G[0Jtest> [7Gshow dbs
+[1madmin[0m         100.00 KiB
+[1mconfig[0m         84.00 KiB
+[1mlocal[0m          72.00 KiB
+[1mthe_database[0m   56.00 KiB
+[1G[0Jtest> [7Gs[1G[0Jtest> [7Guse the_database
+switched to db the_database
+[1G[0Jthe_database> [15Gshow collections
+[1mtodos[0m
+[1G[0Jthe_database> [15Gdb.todos.find()[1G[0Jthe_database> db.todos.find([29G{})
+[
+  {
+    _id: ObjectId("649859b0d0c533f418929f27"),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId("649859b0d0c533f418929f28"),
+    text: [32m'Learn about containers'[39m,
+    done: [33mtrue[39m
+  }
+]
+[1G[0Jthe_database> [15Gdb.inser[1G[0Jthe_database> db.inse[22G[1G[0Jthe_database> db.ins[21G[1G[0Jthe_database> db.in[20G[1G[0Jthe_database> db.i[19G[1G[0Jthe_database> db.[18Gcolle[1G[0Jthe_database> db.coll[22G[1G[0Jthe_database> db.col[21G[1G[0Jthe_database> db.co[20G[1G[0Jthe_database> db.c[19G[1G[0Jthe_database> db.[18Gtodos.inset[1G[0Jthe_database> db.todos.inse[28GrtOne({text[33mtext[39m:[32m"[39m[32mI[39m[32mn[39m[32mc[39m[32mr[39m[32me[39m[32ma[39m[32ms[39m[32me[39m [32mt[39m[32mh[39m[32me[39m [32mn[39m[32mu[39m[32mm[39m[32mb[39m[32me[39m[32mr[39m [32mo[39m[32mf[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m[32ms[39m [32mi[39m[32mn[39m [32mm[39m[32my[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m[32mb[39m[32me[39m[32ml[39m[32mt[39m[32m"[39m,d[36mdo[39mdone:fals[33mfalse[39m})
+{
+  acknowledged: [33mtrue[39m,
+  insertedId: ObjectId("649b1a0c1685c15c83e4280c")
+}
+[1G[0Jthe_database> [15G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"Increase the number of tools in my toolbelt"[39m,[33mdone[39m:[33mfalse[39m})[98G[1G[0Jthe_database> db.todos.find({})[32G
+[
+  {
+    _id: ObjectId("649859b0d0c533f418929f27"),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId("649859b0d0c533f418929f28"),
+    text: [32m'Learn about containers'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId("649b1a0c1685c15c83e4280c"),
+    text: [32m'Increase the number of tools in my toolbelt'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jthe_database> [15Gexit
+[?2004hroot@1249e1da0c5f:/# exit
+[?2004lexit
+[?2004h]0;mrgameandcode@PC:  /opt/fullstackopen/part12/part12-containers-applications/script-answers[01;32mmrgameandcode@PC[00m:[01;34m /opt/fullstackopen/part12/part12-containers-applications/script-answers[00m$ exit
+[?2004lexit
+
+Script done on 2023-06-27 19:19:23+02:00 [COMMAND_EXIT_CODE="0"]
